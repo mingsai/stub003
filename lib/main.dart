@@ -1,9 +1,19 @@
+import 'package:flutter/foundation.dart' show debugDefaultTargetPlatformOverride;
+import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 
-TargetPlatform debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+//TargetPlatform debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+void main(){
+  _setTargetPlatformForDesktop();
+  runApp(MyApp());
+}  
 
-void main() => runApp(MyApp());
-
+void _setTargetPlatformForDesktop() {
+  // No need to handle macOS, as it has now been added to TargetPlatform.
+  if (Platform.isLinux || Platform.isWindows) {
+    debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+  }
+}
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
