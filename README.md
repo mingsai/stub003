@@ -8,7 +8,9 @@ This project is a starting point for a Flutter application. I am testing that a 
 
 In flutter enable the linux desktop support, then create your own project, and make the mods noted below.
 
-Ensure that you latest version of gcc, clang++, and make installed using apt-get. You may have to link the clang-x++ and clang-x file to corresponding commands clang and clang++.
+NOTE: You may have to run flutter run -d linux before the linux folders are generated. Then you will need to add the two missing files noted below.
+
+Ensure that you latest version of gcc, clang++, and make installed using apt-get. You may have to link the clang-x++ and clang-x file to corresponding commands clang and clang++. 
 
 - Modify the Makefile with the application name. Verify that the main.cc file is in place within the linux folder.
 
@@ -17,8 +19,6 @@ Required modifications to the main.dart include an appropriate test for the corr
     import 'package:flutter/foundation.dart' show debugDefaultTargetPlatformOverride;
     import 'dart:io' show Platform;
     import 'package:flutter/material.dart';
-
-    //TargetPlatform debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
     
     void main(){
         _setTargetPlatformForDesktop();
