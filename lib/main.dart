@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+TargetPlatform debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
